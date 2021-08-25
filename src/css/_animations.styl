@@ -1,0 +1,47 @@
+/*
+  Анимация:
+  enter
+  exit
+*/
+
+/*
+ анимация длядобавления и удаления бургеров
+
+*/
+
+.order-enter
+  transition: 0.5s;
+  transform: translateX(-120%);
+  max-height: 0;
+  &.order-enter-active
+    transform: translateX(0)
+    max-height: 60px;
+    padding: 2rem 0 !important
+
+.order-exit
+  transition: 0.5s;
+  transform: translateX(0);
+  &.order-exit-active
+    transform: translateX(120%)
+    padding: 0;
+
+/*
+  анимация количества бургеров в заказе
+  в count-exit указываем позицию absolute
+  чтобы старые и новые цифры были на одном месте
+*/
+
+.count-enter
+  transition: 0.5s;
+  transform: translateY(100%);
+  &.count-enter-active
+    transform: translateY(0);
+
+.count-exit
+  transition: 0.5s;
+  transform: translateY(0);
+  position: absolute;
+  left: 0;
+  buttom: 0;
+  &.count-exit-active
+    transform: translateY(-100%);
